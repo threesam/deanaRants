@@ -1,10 +1,23 @@
-<script>
+<script context="module">
+  export async function preload({ params, query }) {
+    const key = 'key=7d237e6e-4e5d-4a68-a659-060a0cb7076f'
+    const res = await this.fetch(
+      `https://holidayapi.com/v1/holidays?${key}&country=US&year=2019`,
+    )
+    const posts = await res.json()
+    return { posts }
+  }
+</script>
 
+<script>
+  export let posts
+  posts = posts.holidays
+  // console.log(posts)
 </script>
 
 <style>
   h1,
-  p {
+  h2 {
     text-align: center;
     margin: 0 auto;
   }
@@ -13,15 +26,19 @@
     font-size: 2.8em;
     text-transform: uppercase;
     font-weight: 700;
-    margin: 0 0 0.5em 0;
   }
 
+  h2 {
+    color: var(--accent);
+    margin: 1rem;
+  }
+  div {
+    height: 60vh;
+  }
   img {
+    height: 100%;
     width: 100%;
-  }
-
-  p {
-    margin: 1em auto;
+    filter: invert();
   }
 
   @media (min-width: 480px) {
@@ -35,6 +52,12 @@
   <title>Deana Rants</title>
 </svelte:head>
 
-<h1>deana rants</h1>
+<section>
+  <h1>deana rants</h1>
 
-<img src="flowerWall.png" alt="flowers with inverted colors" />
+  <h2>Coming Soon...</h2>
+
+  <div>
+    <img src="deana-leaf.svg" alt="a leaf" />
+  </div>
+</section>

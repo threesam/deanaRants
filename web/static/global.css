@@ -1,6 +1,17 @@
 :root {
-	--grey-blue-tint: 209, 224, 215;
-	--background-color: rgb(var(--grey-blue-tint));
+	--rgb-accent: 209, 224, 215;
+	--rgb-white: 250, 250, 250;
+	--rgb-black: 10, 10, 10;
+	--rgb-dark-grey: 50, 50, 50;
+	--rgb-light-grey: 200, 200, 200;
+
+	--accent: rgb(var(--rgb-accent));
+	--white: rgb(var(--rgb-white));
+	--black: rgb(var(--rgb-black));
+	--dark-grey: rgb(var(--rgb-dark-grey));
+	--light-grey: rgb(var(--rgb-light-grey));
+
+	--background-color: var(--accent);
 }
 
 body {
