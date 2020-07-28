@@ -49,7 +49,7 @@
 </style>
 
 <svelte:head>
-  <title>Deana Rants</title>
+  <title>Diana</title>
 </svelte:head>
 
 <section>
