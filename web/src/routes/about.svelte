@@ -16,7 +16,6 @@
   export let author
   author = author[0]
   const { name, image, alt, bio } = author
-  console.log(author)
 </script>
 
 <style>

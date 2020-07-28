@@ -24,7 +24,7 @@
 
   h1 {
     font-size: 2.8em;
-    text-transform: uppercase;
+    text-transform: lowercase;
     font-weight: 700;
   }
 
@@ -53,7 +53,7 @@
 </svelte:head>
 
 <section>
-  <h1>deana rants</h1>
+  <h1>Diana D'Angelo</h1>
 
   <h2>Coming Soon...</h2>
 
