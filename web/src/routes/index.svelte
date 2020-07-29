@@ -10,12 +10,16 @@
 </script>
 
 <script>
+  import { fade, blur } from 'svelte/transition'
   export let posts
   posts = posts.holidays
   // console.log(posts)
 </script>
 
 <style>
+  section {
+    position: relative;
+  }
   h1,
   h2 {
     text-align: center;
@@ -38,7 +42,7 @@
   img {
     height: 100%;
     width: 100%;
-    filter: invert();
+    filter: invert() opacity(25%);
   }
 
   @media (min-width: 480px) {
@@ -53,11 +57,11 @@
 </svelte:head>
 
 <section>
-  <h1>Diana D'Angelo</h1>
+  <h1 in:blur={{ duration: 2000 }}>Diana D'Angelo</h1>
 
-  <h2>Coming Soon...</h2>
+  <h2 in:fade>Coming Soon...</h2>
 
-  <div>
+  <div in:fade>
     <img src="deana-leaf.svg" alt="a leaf" />
   </div>
 </section>

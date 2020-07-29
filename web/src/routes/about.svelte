@@ -13,6 +13,7 @@
 </script>
 
 <script>
+  import { slide, blur } from 'svelte/transition'
   export let author
   author = author[0]
   const { name, image, alt, bio } = author
@@ -32,5 +33,8 @@
 </svelte:head>
 
 <h1>About {name}</h1>
-<img src={`${image}?fit=crop&crop=entropy`} {alt} />
-<p>{bio}</p>
+<img
+  in:slide={{ duration: 1000 }}
+  src={`${image}?fit=crop&crop=entropy`}
+  {alt} />
+<p in:blur={{ delay: 1000 }}>{bio}</p>
