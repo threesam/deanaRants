@@ -34,6 +34,10 @@
 </script>
 
 <style>
+.content {
+  background-color: var(--black);
+  padding: 1rem;
+}
   .content :global(h2) {
     font-size: 1.4em;
     font-weight: 500;
@@ -55,12 +59,16 @@
   .content :global(li) {
     margin: 0 0 0.5em 0;
   }
+  a {
+    color: var(--dark-grey);
+}
 </style>
 
 <svelte:head>
   <title>{post.title}</title>
 </svelte:head>
 
+<a href="/blog">All Posts</a>
 <h1>{post.title}</h1>
 
 <div class="content">

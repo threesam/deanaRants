@@ -1,0 +1,28 @@
+# .github/workflows/netlify.yml
+name: Build and Deploy to Netlify
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      # ( Build to ./dist or other directory... )
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.1
+        with:
+          publish-dir: './__sapper__/export'
+          production-branch: master
+          # github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: F9lKJlBDFX2u6x-IgSTeWh6e7r4e8gVqf58KnVdr-HU
+          NETLIFY_SITE_ID: 4bd37c60-fbf9-4d27-a5d2-b323ac4aa07c
+        timeout-minutes: 1

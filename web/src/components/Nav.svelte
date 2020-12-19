@@ -59,14 +59,23 @@
       <a class={segment === 'about' ? 'selected' : ''} href="about">about</a>
     </li>
 
-    <!-- <li>
+    <li>
       <a
         rel="prefetch"
         class={segment === 'blog' ? 'selected' : ''}
         href="blog">
         blog
       </a>
-    </li> -->
+    </li>
+
+     <li>
+      <a
+        rel="prefetch"
+        class={segment === 'recipes' ? 'selected' : ''}
+        href="recipes">
+        recipes
+      </a>
+    </li>
 
   </ul>
 </nav>

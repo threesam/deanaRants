@@ -26,6 +26,9 @@
     object-fit: cover;
     filter: brightness(50%);
   }
+  p {
+    color: var(--black);
+  }
 </style>
 
 <svelte:head>

@@ -13,7 +13,20 @@
   import { fade, blur } from 'svelte/transition'
   export let posts
   posts = posts.holidays
-  // console.log(posts)
+
+  let value = 'test'
+  let searchResult
+
+  const searchWord = async (searchTerm) => {
+    const queryType = `*[_type == "recipe"]`
+    const queryMatch = `[title match "${searchTerm}"]`
+    const query = queryType + "|" + queryMatch
+    const res = await fetch(`https://tjn7y9g9.api.sanity.io/v1/data/query/production?query=${query}`)
+    const data = await res.json()
+    searchResult = data
+    return { data }
+  }
+
 </script>
 
 <style>
@@ -60,6 +73,16 @@
   <h1 in:blur={{ duration: 2000 }}>Diana D'Angelo</h1>
 
   <h2 in:fade>Coming Soon...</h2>
+
+<label for="search"></label>
+<input type="text" placeholder="Search" bind:value>
+<button on:click={() => searchWord(value)}>Fetch</button>
+
+{#await searchWord()}
+  <p>...fetching</p>
+{:then searchResult} 
+  <p>{searchResult.title}</p>
+{/await}
 
   <div in:fade>
     <img src="deana-leaf.svg" alt="a leaf" />
